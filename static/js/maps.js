@@ -17,4 +17,25 @@ function initMap() {
             },
             zoom: 13
         });
+
+    document.querySelector('#geocode-address').addEventListener(
+        'click', () => {
+            const userAddress = prompt('Enter a location');
+            console.log(userAddress);
+
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({address: userAddress}, (results, status) => {
+                if (status === 'OK') {
+                    const userLocation = results[0].geometry.location;
+                    console.log(userLocation);
+
+                    map.setCenter(userLocation);
+                    map.setZoom(16);
+                }
+                else {
+                    alert(`Geocode was unsuccessful for the following 
+                    reason: ${status}`);
+                };
+            });
+        });
 };
