@@ -12,8 +12,22 @@
   </head>
 
   <body>
+
+    <header>
+      <!-- MDN nav HTML element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav -->
+      <nav>
+          <section id="links-left">
+              <a href="/map/search">Search by NYC Address</a>
+          </section>
+          <section id="links-right">
+              <a href="/">Home</a>
+          </section>
+      </nav>
+    </header>
+
     {% block body %}
     {% endblock %}
+    
   </body>
 
 </html>

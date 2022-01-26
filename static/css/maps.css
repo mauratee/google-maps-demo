@@ -1,4 +1,14 @@
 
+body { font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    margin: 50;
+    font-size: 1.2rem;
+    /* line-height: 1.5; */
+    color: #383442;
+    text-align: left;
+    background-color: #ffffff;
+    }
+
 #map {
     height: 500px;
 }
@@ -35,4 +45,12 @@ nav a {
     font-size: 1em;
     font-family: inherit;
   }
+
+#home-search-box {
+
+    background-color: #f8f8f8;
+    border: 1px solid #727e96;
+    margin: 75px auto 60px;
+    padding: 35px;
+}
   

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/static/css/maps.css"/>
+    
+    <!-- Load JS code (code that has Google Maps Init fxn) before async script -->
+    <!-- <script src="/static/js/maps.js"></script> -->
+
+{% endblock %}
+
+{% block body %}
+
+    <h1>Map Search Demo</h1>
+
+    <div id="home-search-box">
+        <form id="search-address-form" action="/search_address">
+  
+          <div class="form-group">
+            <br>
+            <h6>Enter a New York City address to search for renter reviews and other information about landlords:</h6>
+            <input class="form-control" type="text" name="search_nyc_address" 
+            id="search_nyc_address" placeholder="Search by NYC address">
+          </div>
+  
+          <br>
+  
+          <div class="form-group">
+              <button type="submit" id="search_nyc_button">
+                Search</button>
+          </div>
+        </form>
+      </div>
+
+    
+    <div id="map"></div>
+
+
+    <!-- Added Maura's Google Maps API Key (restricted to home IP address) -->
+    <script
+    async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXgYdTZCVDtJeKFWtrgGHQ_x2kUe7zz8&callback=initMap">
+    </script>
+{% endblock %}
