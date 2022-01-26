@@ -1,0 +1,15 @@
+
+#map {
+    height: 500px;
+}
+
+html, body {
+    height: 100%;
+    margin: 50;
+    padding: 0;
+}
+
+h1 {
+    color: tomato;
+}
+  
