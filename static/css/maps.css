@@ -13,6 +13,10 @@ body { font-family: 'Inconsolata', monospace;
     height: 500px;
 }
 
+#map2 {
+    height: 500px;
+}
+
 html, body {
     height: 100%;
     margin: 50;

@@ -32,8 +32,8 @@ def search_use_API():
     # print(searched_address)
 
     text = request.json.get("text")
-    print("*"*40)
-    print(text)
+    # print("*"*40)
+    # print(text)
 
     # send user input to NYC Geosearch
     url = "https://geosearch.planninglabs.nyc/v1/autocomplete"
@@ -43,10 +43,8 @@ def search_use_API():
     features = data["features"]
      # save lat lng coordinates of search to variable or render error message
     coordinates = features[0]["geometry"]["coordinates"]
-    print("*"*40)
-    print(coordinates)
-    # ? jsonify lat lng - yes! via AJAX request
-    # ? pass lat lng as variable to Jinja - not best practice!
+    # print("*"*40)
+    # print(coordinates)
 
     return jsonify({"coordinates": coordinates})
 

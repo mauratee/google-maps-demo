@@ -1,5 +1,5 @@
 'use strict';
-alert('maps.js is connected!');
+// alert('ajax-maps.js is connected!');
 
 
 function initMap() {
@@ -9,7 +9,7 @@ function initMap() {
     };
 
     const map = new google.maps.Map(
-        document.querySelector('#map'), {
+        document.querySelector('#map2'), {
             center: initialCoords,
             zoom: 13
         });
@@ -47,20 +47,29 @@ function initMap() {
         })
           .then(response => response.json())
           .then(responseText => {
-    
-            const searchedCoords = responseText;
+
+            // const searchedCoords = {
+            //     lat: responseText['coordinates'][0],
+            //     lng: responseText['coordinates'][1],
+            // };
+
+            const lat = responseText['coordinates'][0];
+            console.log(lat);
+            const lng = responseText['coordinates'][1];
+            const searchedCoords = new google.maps.LatLng(lat, lng); 
+
             console.log(searchedCoords);
-            // map.setCenter(searchedCoords);
+
+            map.setCenter(searchedCoords);
+            map.setZoom(16);
 
           });
 
-        // $.get('/api/bears', bears => {
-        //     for (const bear of bears) {
-
-        //     }     
-        // });
+        
 
       });
 
+    // map2.setCenter(searchedCoords);
+    // map2.setZoom(16);
 
 };
