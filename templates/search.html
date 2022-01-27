@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="/static/css/maps.css"/>
     
     <!-- Load JS code (code that has Google Maps Init fxn) before async script -->
-    <!-- <script src="/static/js/maps.js"></script> -->
+    <script src="/static/js/ajax-maps.js"></script>
+
 
 {% endblock %}
 
@@ -14,7 +15,7 @@
     <h1>Map Search Demo</h1>
 
     <div id="home-search-box">
-        <form id="search-address-form" action="/api/search_address">
+        <form id="search-address-form">
   
           <div class="form-group">
             <br>

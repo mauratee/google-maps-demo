@@ -20,16 +20,20 @@ def search_page():
     return render_template("search.html")
 
 
-@app.route("/api/search_address")
+@app.route("/api/search_address", methods=["POST"])
 def search_use_API():
     """ Take user input from HTML form and send to 
         NYC Geosearch API to get lat lng coordinates
         to render Google Map of search result. """
     
     # request.args.get user input
-    text = request.args.get("search_nyc_address")
+    # text = request.args.get("search_nyc_address")
     # print("*"*40)
     # print(searched_address)
+
+    text = request.json.get("text")
+    print("*"*40)
+    print(text)
 
     # send user input to NYC Geosearch
     url = "https://geosearch.planninglabs.nyc/v1/autocomplete"

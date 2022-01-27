@@ -2,31 +2,6 @@
 alert('maps.js is connected!');
 
 
-document.querySelector('#search-nyc-button').addEventListener('submit', evt => {
-    evt.preventDefault();
-  
-    const formInputs = {
-      text: document.querySelector('#search_nyc_address').value,
-    };
-
-    console.log(formInputs);
-  
-    fetch('/api/search_address', {
-      method: 'POST',
-      body: JSON.stringify(formInputs),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(responseJson => {
-        alert(responseJson.status);
-
-        console.log(responseJson);
-      });
-  });
-
-
 function initMap() {
     const initialCoords = {
         lat: 52.511225, 
@@ -52,6 +27,40 @@ function initMap() {
         },
         map: map
     }); 
+
+    document.querySelector('#search-nyc-button').addEventListener('click', evt => {
+        evt.preventDefault();
+      
+        const formInputs = {
+          text: document.querySelector('#search_nyc_address').value,
+        };
+    
+        console.log(formInputs);
+      
+        // Calling fetch directly to NYC Geosearch API results in CORS request blocking
+        fetch("/api/search_address", {
+          method: 'POST',
+          body: JSON.stringify(formInputs),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then(response => response.json())
+          .then(responseText => {
+    
+            const searchedCoords = responseText;
+            console.log(searchedCoords);
+            // map.setCenter(searchedCoords);
+
+          });
+
+        // $.get('/api/bears', bears => {
+        //     for (const bear of bears) {
+
+        //     }     
+        // });
+
+      });
 
 
 };
