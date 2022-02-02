@@ -43,8 +43,8 @@ def search_use_API():
     features = data["features"]
      # save lat lng coordinates of search to variable or render error message
     coordinates = features[0]["geometry"]["coordinates"]
-    # print("*"*40)
-    # print(coordinates)
+    print("*"*40)
+    print(coordinates)
 
     return jsonify({"coordinates": coordinates})
 
