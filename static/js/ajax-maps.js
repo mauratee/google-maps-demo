@@ -48,20 +48,25 @@ function initMap() {
           .then(response => response.json())
           .then(responseText => {
 
-            const searchedCoords = {
-                lat: responseText['coordinates'][0],
-                lng: responseText['coordinates'][1],
-            };
+            // const searchedCoords = {
+            //     lat: responseText['coordinates'][0],
+            //     lng: responseText['coordinates'][1],
+            // };
+
+            const lat = responseText['coordinates'][0];
+            console.log(lat);
+            const lng = responseText['coordinates'][1];
+            const searchedCoords = new google.maps.LatLng(lat, lng);
 
             console.log(searchedCoords);
 
-            const map = new google.maps.Map(
-                document.querySelector('#map'), {
+            const newMap = new google.maps.Map(
+                document.querySelector('#map2'), {
                     center: searchedCoords,
                     zoom: 16
                 });
 
-            console.log(map);
+            console.log(newMap);
             // map object renderingType: UNINITIALIZED
             // probably the problem => how to fix?
             // https://developers.google.com/maps/documentation/javascript/reference/map#RenderingType

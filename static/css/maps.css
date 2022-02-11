@@ -3,7 +3,6 @@ body { font-family: 'Inconsolata', monospace;
     font-weight: 300;
     margin: 50;
     font-size: 1.2rem;
-    /* line-height: 1.5; */
     color: #383442;
     text-align: left;
     background-color: #ffffff;
@@ -15,6 +14,7 @@ body { font-family: 'Inconsolata', monospace;
 
 #map2 {
     height: 500px;
+    width: 500px
 }
 
 html, body {

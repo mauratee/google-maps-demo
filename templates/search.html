@@ -5,11 +5,6 @@
   <!-- Load JS code (code that has Google Maps Init fxn) before async script -->
   <script src="/static/js/ajax-maps.js"></script>
 
-  <!-- Added Maura's Google Maps API Key (restricted to home IP address) -->
-  <script
-  async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXgYdTZCVDtJeKFWtrgGHQ_x2kUe7zz8&callback=initMap">
-  </script>
 {% endblock %}
 
 {% block body %}
@@ -37,7 +32,12 @@
       </div>
 
     
-    <div id="map"></div>
+    <div id="map2"></div>
 
+  <!-- Added Maura's Google Maps API Key (restricted to home IP address) -->
+  <script
+  async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXgYdTZCVDtJeKFWtrgGHQ_x2kUe7zz8&callback=initMap">
+  </script>
 
 {% endblock %}
